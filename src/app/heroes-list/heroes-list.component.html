@@ -1,0 +1,32 @@
+<p class="text-success">{{ productMessage }}</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let items of listitem">
+      <tr [ngClass]="items.completed == true ? 'completed' : 'notcompleted'">
+        <td>{{ items.title }}</td>
+        <td>
+          <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+            <input
+              type="checkbox"
+              formControlName="isChecked"
+              (ngModelChange)="onCheckboxChange()"
+            />
+            <button type="button" (click)="submitForm()">Submit</button>
+          </form>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

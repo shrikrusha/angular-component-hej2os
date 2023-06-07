@@ -1,0 +1,49 @@
+table {
+  width: 750px;
+  border-collapse: collapse;
+  margin: 50px auto;
+}
+
+/* Zebra striping */
+tr {
+  position: relative;
+}
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+th {
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 18px;
+}
+td {
+  position: relative;
+}
+tr.completed td:before {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-bottom: 1px solid #111;
+  width: 100%;
+}
+
+tr.completed td:after {
+  content: '\00B7';
+  font-size: 1px;
+}
+form button {
+  visibility: hidden;
+}
+form {
+  position: absolute;
+}
